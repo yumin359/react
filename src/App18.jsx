@@ -6,6 +6,8 @@ import {
   Navbar,
   Pagination,
   Spinner,
+  Form,
+  FloatingLabel,
 } from "react-bootstrap";
 import { useState } from "react";
 import { GrCaretNext, GrCaretPrevious } from "react-icons/gr";
@@ -14,6 +16,29 @@ function App18() {
   const [show, setShow] = useState(false);
   return (
     <div>
+      <FloatingLabel label="아이디를 입력해주세요." controlId="idFloatingInput">
+        <Form.Control placeholder="아이디를 입력해주세요" />
+      </FloatingLabel>
+      <FloatingLabel
+        label="비밀번호를 입력해주세요."
+        controlId="passwordFloatingInput"
+      >
+        <Form.Control type="password" placeholder="__" />
+      </FloatingLabel>
+      <hr />
+      <Form.Group controlId="idInput">
+        <Form.Label>아이디</Form.Label>
+        <Form.Control />
+      </Form.Group>
+      <Form.Group controlId="passwordInput">
+        <Form.Label>비밀번호</Form.Label>
+        <Form.Control type="password" />
+      </Form.Group>
+      <Form.Group controlId="contentInput">
+        <Form.Label>본문</Form.Label>
+        <Form.Control as="textarea" />
+      </Form.Group>
+      <hr />
       <Button onClick={() => setShow(!show)}>모달 예제</Button>
       <Modal show={show} onHide={() => setShow(!show)}>
         <Modal.Header closeButton={true}>
