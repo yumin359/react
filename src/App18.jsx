@@ -31,7 +31,7 @@ function App18() {
         <Carousel.Item>
           <img className="d-block w-100" src="/public/eagle.jpg" alt="" />
           <Carousel.Caption>
-            <h3>부엉</h3>
+            <h3>독수리</h3>
             <p>Lorem ipsum dolor sit amet.</p>
           </Carousel.Caption>
         </Carousel.Item>
