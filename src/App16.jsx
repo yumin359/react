@@ -23,7 +23,8 @@ function App16() {
       <Alert variant="danger">위험 경고</Alert>
       <Alert variant="info">정보 알림</Alert>
       {/* 연습 : Alert 만들어보기 */}
-      <Alert variant="warning">노란색</Alert>
+      <Alert variant="warning">경고</Alert>
+      <Alert variant="success">성공</Alert>
       {/* 연습 : Table component 사용해서 아래와 같은 table 만들어보기 */}
       <Table striped bordered hover>
         <thead>
