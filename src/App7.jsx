@@ -31,7 +31,12 @@ function App7() {
         person={{ name: "son", age: 33, team: "토트넘" }}
       />
       {/* 연습 : props 작성해보기 */}
-      <MyComp2 />
+      <MyComp2
+        name={"lee"}
+        age={44}
+        address={{ city: "seoul", country: "korea" }}
+        married={false}
+      />
     </>
   );
 }
