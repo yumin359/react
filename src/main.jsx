@@ -1,13 +1,12 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import App14 from "./App14.jsx";
-import App15 from "./App15.jsx";
+import "bootstrap/dist/css/bootstrap.min.css";
+import App16 from "./App16.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <>
-      <App14 />
-      <App15 />
+      <App16 />
     </>
   </StrictMode>,
 );
