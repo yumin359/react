@@ -14,6 +14,18 @@ function App11() {
   // 브라우저 컴포넌트의 props : html attribute 를 사용
   // but, class -> className, for ->htmlFor
 
+  // style prop : style attribute 역할
+  /*
+  **style attribute**
+  <div style="color: red; background-color: yellow; font-size: 24px;">
+  </div>
+   */
+  /*
+  **style prop**
+  <div style={{color: "red", backgroundColor: "yellow", fontSize: "24px"}}>
+  </div>
+   */
+
   return (
     <>
       <MyComp1 color="red">작성된 컨텐츠</MyComp1>
@@ -31,6 +43,25 @@ function App11() {
       <input type="text" id="nameInput" />
       <hr />
       <div className="content">hello</div>
+      <hr />
+      <div
+        style={{ color: "red", backgroundColor: "yellow", fontSize: "24px" }}
+      >
+        스타일 props 사용
+      </div>
+      <hr />
+      {/*  연습 style props 을 사용해서 자신만의 버튼 만들어 보기 */}
+      <button
+        style={{
+          color: "skyblue",
+          backgroundColor: "black",
+          padding: "10px",
+          borderRadius: "5px",
+          fontSize: "2em",
+        }}
+      >
+        내가 만든 멋진 버튼
+      </button>
     </>
   );
 }
