@@ -32,12 +32,16 @@ function AwesomeHeader({ children, onDoubleClick }) {
   );
 }
 function App20(props) {
+  const handleHeaderDoubleClick2 = () => console.log("멋진헤더2 더블클릭");
   return (
     <div>
       {/* 연습 : AwesomeHeader 를 만들고 마우스가 더블클릭하면 콘솔에 메시지 출력 */}
       {/* <h1 style={적절한 스타일 주기}></h1> */}
       <AwesomeHeader onDoubleClick={() => console.log("멋진헤더 더블클릭")}>
         멋진헤더
+      </AwesomeHeader>
+      <AwesomeHeader onDoubleClick={handleHeaderDoubleClick2}>
+        멋진헤더2
       </AwesomeHeader>
 
       <button onClick={() => console.log("보통의 버튼 클릭")}>
