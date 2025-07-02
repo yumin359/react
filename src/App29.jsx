@@ -88,6 +88,10 @@ function MyComp5() {
   const [list, setList] = useState(["곰", "독수리", "벌"]);
 
   // 연습
+  function handleLionButtonClick() {
+    setList([...list, "사자"]);
+  }
+
   // 각 버튼 클릭시 새 아이템 추가 되도록 코드 작성
   return (
     <div>
@@ -95,6 +99,7 @@ function MyComp5() {
       <button onClick={() => setList([...list, "곰"])}>곰 추가</button>
       <button onClick={() => setList([...list, "독수리"])}>독수리 추가</button>
       <button onClick={() => setList([...list, "벌"])}>벌 추가</button>
+      <button onClick={handleLionButtonClick}>사자 추가</button>
       <ul>
         {list.map((item) => (
           <li>{item}</li>
