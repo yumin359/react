@@ -9,7 +9,7 @@ function App22(props) {
 
   function handleSearchSubmit(e) {
     e.preventDefault();
-    console.log("서브밋 됨");
+    console.log("서브밋 됨!");
   }
   return (
     <div>
