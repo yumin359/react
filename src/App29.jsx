@@ -100,6 +100,16 @@ function MyComp5() {
       <button onClick={() => setList([...list, "독수리"])}>독수리 추가</button>
       <button onClick={() => setList([...list, "벌"])}>벌 추가</button>
       <button onClick={handleLionButtonClick}>사자 추가</button>
+      <button
+        onClick={() => {
+          const nextList = [...list];
+          nextList.pop();
+          setList(nextList);
+        }}
+      >
+        마지막 요소 지우기
+      </button>
+
       <ul>
         {list.map((item) => (
           <li>{item}</li>
