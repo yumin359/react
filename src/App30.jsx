@@ -65,9 +65,52 @@ function MyComp3() {
   );
 }
 
+function MyComp4() {
+  const [student, setStudent] = useState({
+    name: "",
+    className: "",
+    score: 0.0,
+  });
+  // 연습 : 아래 input 요소에 값이 출력되도록 코드 작성
+
+  function handleInput1Change(e) {
+    const nextStudent = { ...student };
+    nextStudent.name = e.target.value;
+    setStudent(nextStudent);
+  }
+  function handleInput2Change(e) {
+    setStudent({ ...student, className: e.target.value });
+  }
+
+  return (
+    <div>
+      <div>
+        <input onChange={handleInput1Change} type="text" value={student.name} />
+      </div>
+      <div>
+        <input
+          onChange={handleInput2Change}
+          type="text"
+          value={student.className}
+        />
+      </div>
+      <div>
+        <input
+          onChange={(e) => setStudent({ ...student, score: e.target.value })}
+          type="number"
+          value={student.score}
+          step={0.1}
+        />
+      </div>
+    </div>
+  );
+}
+
 function App30(props) {
   return (
     <div>
+      <MyComp4 />
+      <hr />
       <MyComp3 />
       <hr />
       <MyComp2 />
