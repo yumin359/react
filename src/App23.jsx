@@ -122,6 +122,7 @@ let i = 0;
 function MyComp7() {
   // 연습: 다음 버튼 클릭시 독수리->사자->곰->독수리로 출력되도록 코드 완성
   const [imgArr, setImgArr] = useState(images[i]);
+
   function handleNextButtonClick() {
     i++;
     if (i == 3) {
@@ -140,12 +141,47 @@ function MyComp7() {
     console.log(i);
   }
 
+  // 여기부터
+  const [index, setIndex] = useState(0);
+
+  function handlePrevButton1Click() {
+    let nextIndex = index + 1;
+    if (nextIndex >= images.length) {
+      nextIndex = 0;
+    }
+    setIndex(nextIndex);
+  }
+
+  function handleNextButton1Click() {
+    let prevIndex = index - 1;
+    if (prevIndex < 0) {
+      prevIndex = images.length - 1;
+    }
+    setIndex(prevIndex);
+  }
+
+  function handlePrevButton2Click() {
+    setIndex((index - 1 + images.length) % images.length);
+  }
+
+  function handleNextButton2Click() {
+    setIndex((index + 1) % images.length);
+  }
+  // 여기까지 강사님이 하신거
+
   return (
     <div>
       <img className="w-100" src={imgArr} alt="" />
-      <br />
       <button onClick={handlePrevButtonClick}>이전</button>
       <button onClick={handleNextButtonClick}>다음</button>
+      <br />
+      <img className="w-100" src={images[index]} alt="" />
+      <button onClick={handlePrevButton1Click}>이전</button>
+      <button onClick={handleNextButton1Click}>다음</button>
+      <br />
+      {/*<img className="w-100" src={images[index]} alt="" />*/}
+      <button onClick={handlePrevButton2Click}>이전</button>
+      <button onClick={handleNextButton2Click}>다음</button>
     </div>
   );
 }
