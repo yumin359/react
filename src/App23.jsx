@@ -117,9 +117,44 @@ function MyComp6() {
   );
 }
 
+const images = ["/public/bear.jpg", "/public/eagle.jpg", "/public/lion.jpg"];
+let i = 0;
+function MyComp7() {
+  // 연습: 다음 버튼 클릭시 독수리->사자->곰->독수리로 출력되도록 코드 완성
+  const [imgArr, setImgArr] = useState(images[i]);
+  function handleNextButtonClick() {
+    i++;
+    if (i == 3) {
+      i = 0;
+    }
+    setImgArr(images[i]);
+    console.log(i);
+  }
+
+  function handlePrevButtonClick() {
+    i--;
+    if (i == -1) {
+      i = 2;
+    }
+    setImgArr(images[i]);
+    console.log(i);
+  }
+
+  return (
+    <div>
+      <img className="w-100" src={imgArr} alt="" />
+      <br />
+      <button onClick={handlePrevButtonClick}>이전</button>
+      <button onClick={handleNextButtonClick}>다음</button>
+    </div>
+  );
+}
+
 function App23(props) {
   return (
     <div>
+      <MyComp7 />
+      <hr />
       <MyComp6 />
       <hr />
       <MyComp5 />
