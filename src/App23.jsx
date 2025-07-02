@@ -45,9 +45,89 @@ function MyComp2() {
   );
 }
 
+function MyComp3() {
+  // const count = arr[0]; // 현재 상태
+  // const setCount = arr[1]; // 상태 업데이트 함수
+  const [count, setCount] = useState(1);
+
+  function handleButtonClick() {
+    setCount(count + 1);
+  }
+
+  return (
+    <div>
+      {count}
+      <br />
+      <button onClick={handleButtonClick}>세번째 버튼</button>
+    </div>
+  );
+}
+
+function MyComp4() {
+  const [message, setMessage] = useState("첫번째 메세지");
+
+  // 연습
+  // 1번 버튼을 클릭하면 message가 "첫번째 메세지"
+  // 2번 버튼을 클릭하면 message가 "두번째 메세지"
+  function handleButton1Click() {
+    // message = "첫번째 메세지"; // 이렇게 하면 안 됨
+    setMessage("첫번째 메세지");
+  }
+
+  function handleButton2Click() {
+    // message = "두번째 메세지"; // 이렇게 하면 안 됨
+    setMessage("두번째 메세지");
+  }
+
+  // 로 출력되도록 코드 작성
+  return (
+    <div>
+      {message}
+      <br />
+      <button onClick={handleButton1Click}>1번</button>
+      <button onClick={handleButton2Click}>2번</button>
+    </div>
+  );
+}
+
+function MyComp5() {
+  const [color, setColor] = useState("black");
+
+  return (
+    <div>
+      <div style={{ background: color, padding: "20px" }}></div>
+      <button onClick={() => setColor("red")}>빨강</button>
+      <button onClick={() => setColor("yellow")}>노랑</button>
+      <button onClick={() => setColor("blue")}>파랑</button>
+    </div>
+  );
+}
+
+function MyComp6() {
+  // 각 버튼 클릭시 해당 이미지로 출력되도록 코드 완성
+  const [imagePath, setImagePath] = useState("/public/bear.jpg");
+  return (
+    <div>
+      <img className="w-100" src={imagePath} alt="" />
+      <br />
+      <button onClick={() => setImagePath("/public/bear.jpg")}>곰</button>
+      <button onClick={() => setImagePath("/public/eagle.jpg")}>독수리</button>
+      <button onClick={() => setImagePath("/public/lion.jpg")}>사자</button>
+    </div>
+  );
+}
+
 function App23(props) {
   return (
     <div>
+      <MyComp6 />
+      <hr />
+      <MyComp5 />
+      <hr />
+      <MyComp4 />
+      <hr />
+      <MyComp3 />
+      <hr />
       <MyComp2 />
       <hr />
       <MyComp1 />
