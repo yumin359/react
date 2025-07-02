@@ -36,9 +36,30 @@ function MyComp2() {
   );
 }
 
+function MyComp3() {
+  const [count, setCount] = useState(0);
+  console.log(count); // 현재 상태 출력
+  let number = count;
+
+  function handleButtonClick() {
+    setCount(number + 2);
+  }
+
+  return (
+    <div>
+      {/*연습 : 버튼 클릭시 number 2 씩 늘어나도록 코드 수정*/}
+      {number}
+      <br />
+      <button onClick={handleButtonClick}>증가</button>
+    </div>
+  );
+}
+
 function App24(props) {
   return (
     <div>
+      <MyComp3 />
+      <hr />
       <MyComp2 />
       <hr />
       <MyComp1 />
