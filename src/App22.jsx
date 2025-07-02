@@ -7,6 +7,10 @@ function App22(props) {
     return console.log("링크 클릭됨");
   }
 
+  function handleSearchSubmit(e) {
+    e.preventDefault();
+    console.log("서브밋 됨");
+  }
   return (
     <div>
       {/* onSubmit 이벤트 발생중 */}
@@ -14,10 +18,7 @@ function App22(props) {
       {/*       콘솔에 메세지 출력*/}
       <form
         action="https://search.naver.com/search.naver"
-        onSubmit={(e) => {
-          e.preventDefault();
-          console.log("메시지");
-        }}
+        onSubmit={handleSearchSubmit}
       >
         <input type="text" name="query" />
         <button>검색</button>
