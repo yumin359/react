@@ -78,8 +78,8 @@ function MyComp2() {
 // 위에랑 같은 코드인데 얘를 더 많이 쓴대요
 // 위에는 Uncontrolled에 가깝고, 아래는 Controlled(제어 컴포넌트)로
 // 아래는 input 값이 항상 state에 의해 제어 되기 때문에 다방면에서 유리하대요
-/*
-function MyInput({ person, onNameChange, onAddressChange }) {
+
+function MyInput3({ person, onNameChange, onAddressChange }) {
   return (
     <div>
       <div>
@@ -100,7 +100,7 @@ function MyInput({ person, onNameChange, onAddressChange }) {
   );
 }
 
-function MyOutput({ person }) {
+function MyOutput3({ person }) {
   return (
     <div>
       <p>이름 : {person.name}</p>
@@ -109,7 +109,7 @@ function MyOutput({ person }) {
   );
 }
 
-function MyComp2() {
+function MyComp3() {
   const [person, setPerson] = useState({ name: "", address: "" });
 
   function handleNameChange(name) {
@@ -121,20 +121,21 @@ function MyComp2() {
 
   return (
     <div>
-      <MyInput
+      <MyInput3
         person={person}
         onNameChange={handleNameChange}
         onAddressChange={handleAddressChange}
       />
-      <MyOutput person={person} />
+      <MyOutput3 person={person} />
     </div>
   );
 }
- */
 
 function App34(props) {
   return (
     <div>
+      <MyComp3 />
+      <hr />
       <MyComp2 />
       <hr />
       <MyComp1 />
