@@ -175,13 +175,24 @@ function MyComp4() {
 
   return (
     <div>
-      <input
-        type="text"
-        value={item}
-        onChange={(e) => setItem(e.target.value)}
-      />
-      <button onClick={() => setList([...list, item])}>추가</button>
+      {/*<input*/}
+      {/*  type="text"*/}
+      {/*  value={item}*/}
+      {/*  onChange={(e) => setItem(e.target.value)}*/}
+      {/*/>*/}
+      {/*<button onClick={() => setList([...list, item])}>추가</button>*/}
+      {/*<MyComp4Context value={list}>*/}
+      {/*  <MyComp41 />*/}
+      {/*</MyComp4Context>*/}
+
+      {/*이렇게 다 넣어도 된대용*/}
       <MyComp4Context value={list}>
+        <input
+          type="text"
+          value={item}
+          onChange={(e) => setItem(e.target.value)}
+        />
+        <button onClick={() => setList([...list, item])}>추가</button>
         <MyComp41 />
       </MyComp4Context>
     </div>
