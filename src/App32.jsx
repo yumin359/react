@@ -76,7 +76,7 @@ function MyComp1() {
 function MyComp2() {
   // 이름은 값 가져오니까(중첩된 거 아니니까) 상관없는데
   // city랑 country는 참조값을 가져오는 거라서 값이 바뀌면 전에 값들도 같이 바뀜
-  // 그러니까 얕은 복사 하지 마세용
+  // 그러니까 객체 내의 객체(중첩 객체)일 때 얕은 복사 하지 마세용
   const [person, setPerson] = useState({
     name: "",
     address: { city: "", country: "" },
