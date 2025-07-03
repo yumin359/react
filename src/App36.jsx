@@ -38,9 +38,9 @@ function MyComp1() {
 }
 
 // component의 lifecycle :
-// initial render : 컴포넌트 트리에 붙을 때
-// re-render : 상태가 변경될 때
-// 트리에서 떨어짐
+// initial render(mount) : 컴포넌트 트리에 붙을 때
+// re-render(update) : 상태가 변경될 때
+// unmount : 트리에서 떨어짐
 // 각각 ~할 때 어떤 걸 하고 싶을 때 사용하는 것이
 // useEffect : component의 lifecycle에 맞춰 실행시킬 수 있는 메소드를 가짐
 
