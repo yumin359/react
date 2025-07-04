@@ -27,6 +27,10 @@ function Child2() {
       <h3>{param.str} 배우기</h3>
     </div>
   );
+
+  // 이렇게 해도 된대용
+  // const {str} = useParams();
+  // return <h3>{str} 배우기</h3>;
 }
 
 function App45(props) {
