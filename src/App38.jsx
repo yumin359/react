@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { FormCheck } from "react-bootstrap";
 
-function MyComp1({ vaule }) {
-  return <div className="border">value * 2 : {vaule * 2}</div>;
+function MyComp1({ value }) {
+  return <div className="border">value * 2 : {value * 2}</div>;
 }
 
 let someValue = 0;
@@ -24,7 +24,7 @@ function MyComp3() {
   }, []);
   return (
     <div>
-      <h3>mycomp3</h3>
+      <h3>mycomp 3</h3>
     </div>
   );
 }
@@ -47,11 +47,7 @@ function MyComp4() {
   const [show, setShow] = useState(true);
   return (
     <div>
-      <FormCheck
-        type="switch"
-        checked={show}
-        onClick={() => setShow(!setShow)}
-      />
+      <FormCheck type="switch" checked={show} onClick={() => setShow(!show)} />
       {show && <Child41 />}
     </div>
   );
@@ -72,8 +68,8 @@ function App38(props) {
       <MyComp2 />
       <MyComp2 />
       <hr />
-      <MyComp1 vaule={1} />
-      <MyComp1 vaule={2} />
+      <MyComp1 value={1} />
+      <MyComp1 value={2} />
     </div>
   );
 }
