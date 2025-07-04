@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { BrowserRouter, Route, Routes, useSearchParams } from "react-router";
+import { Button } from "react-bootstrap";
 
 function Child1() {
   const [keyword, setKeyword] = useState("");
@@ -71,13 +72,13 @@ function Child2() {
       <hr />
       <div className="d-flex justify-content-between">
         {pageNum.map((num) => (
-          <div
+          <Button
             key={num}
-            style={{ cursor: "pointer" }}
+            variant="outline-primary"
             onClick={() => handlePageNumClick(num)}
           >
             {num}
-          </div>
+          </Button>
         ))}
       </div>
     </div>
