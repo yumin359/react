@@ -25,7 +25,7 @@ function MyComp2() {
     { id: 14, title: "또 다른 제목", author: "cha" },
     { id: 21, title: "게시물 제목 21", author: "park" },
   ];
-  // 연습 : key prop 사용하기
+  // 연습 : key prop 사용하기.
   return (
     <div>
       <Table striped={true}>
