@@ -5,7 +5,7 @@ import { BrowserRouter, Route, Routes } from "react-router";
 // localhost:5173/learn : <h3>react 배우기</h3>
 // localhost:5173/tutorial : <h3>react 공부하기</h3>
 // localhost:5173/install : <h3>react 설치하기</h3>
-// localhost:5173/reference : <h3>react 참고문서</h3>
+// localhost:5173/reference/react : <h3>react 참고문서</h3>
 
 function Learn() {
   return (
@@ -45,9 +45,10 @@ function App42(props) {
       <BrowserRouter>
         <Routes>
           <Route path="learn" element={<Learn />}></Route>
-          <Route path="tutorial" element={<Tutorial />}></Route>
+          {/*아래처럼 쓸 수도 있느데 아래처럼 쓰는 경우는 거의 없대요*/}
+          <Route path="tutorial" element={<h3>react 공부하기</h3>}></Route>
           <Route path="install" element={<Install />}></Route>
-          <Route path="reference" element={<Reference />}></Route>
+          <Route path="reference/react" element={<Reference />}></Route>
         </Routes>
       </BrowserRouter>
     </div>
