@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Outlet, Route, Routes } from "react-router";
+import { BrowserRouter, Link, Outlet, Route, Routes } from "react-router";
 
 // 연습
 // /react/install
@@ -13,15 +13,15 @@ function sideNav() {
         className="d-flex flex-column gap-2"
         style={{ width: "100px", border: "1px solid blue" }}
       >
-        <a href="/react/install" className="d-block nav-link">
+        <Link to="/react/install" className="d-block nav-link">
           install
-        </a>
-        <a href="/react/game" className="d-block nav-link">
+        </Link>
+        <Link to="/react/game" className="d-block nav-link">
           game
-        </a>
-        <a href="/react/state" className="d-block nav-link">
+        </Link>
+        <Link to="/react/state" className="d-block nav-link">
           state
-        </a>
+        </Link>
       </div>
       <div
         className="d-flex flex-column flex-grow-1"
