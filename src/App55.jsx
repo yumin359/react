@@ -13,6 +13,7 @@ function App55(props) {
   // 연습: 3번 클릭시 put /api/main30/sub3 요청 보내기
   //      4번 클릭시 delete /api/main30/sub4 요청 보내기
   // spring : put /api/main30/sub3 받는 request handler method
+  //          delete /api/main30/sub4 받는 request handler method
   function handleButton3Click() {
     axios.put("/api/main30/sub3");
   }
@@ -34,9 +35,21 @@ function App55(props) {
     });
   }
 
-  //          delete /api/main30/sub4 받는 request handler method
+  function handleButton6Click() {
+    axios.delete("/api/main30/sub6", {
+      params: {
+        name: "son",
+        id: 77,
+      },
+    });
+  }
+  // 연습 : spring delete /api/main30/sub6 으로 오는 요청
+  // request parameter 받아서 출력하는 코드 완성
+
   return (
     <div>
+      <button onClick={handleButton6Click}>delete 6 w/ data</button>
+      <hr />
       <button onClick={handleButton5Click}>put 5 w/ data</button>
       <hr />
       <button onClick={handleButton4Click}>delete 요청 2</button>
