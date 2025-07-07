@@ -60,8 +60,40 @@ function App53(props) {
     axios.get("/api/main28/sub9?address=seoul&score=99.99");
   }
 
+  function handleButton10Click() {
+    // query string 직접 완성
+    // 이렇게 해도 되지만,
+    axios.get("/api/main28/sub10?address=서울 강남&score=99.99");
+  }
+
+  function handleButton11Click() {
+    // config의 params에 객체를 넣는 방법
+    // 한글이나 띄어쓰기 등 잘 안 넘어갈 때도 있어서 안전하게 넘기는 방법
+    axios.get("/api/main28/sub11", {
+      params: {
+        address: "서울 신촌",
+        score: "88.88",
+      },
+    });
+  }
+
+  function handleButton12Click() {
+    axios.get("/api/main28/sub11", {
+      params: {
+        fruit: "apple",
+        price: 1000,
+      },
+    });
+  }
+
   return (
     <div>
+      <button onClick={handleButton12Click}>요청 12 + query string</button>
+      <hr />
+      <button onClick={handleButton11Click}>요청 11 + query string</button>
+      <hr />
+      <button onClick={handleButton10Click}>요청 10 + query string</button>
+      <hr />
       <button onClick={handleButton9Click}>요청 9 + query string</button>
       <hr />
       <button onClick={handleButton8Click}>요청 8 w/ query string</button>
