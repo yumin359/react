@@ -21,9 +21,24 @@ function App55(props) {
     axios.delete("/api/main30/sub4");
   }
 
+  function handleButton5Click() {
+    axios.put("/api/main30/sub5", {
+      nickName: "trump",
+      team: {
+        name: "donald",
+        age: 212,
+      },
+      age: 22,
+      married: true,
+      address: ["daa", "dda"],
+    });
+  }
+
   //          delete /api/main30/sub4 받는 request handler method
   return (
     <div>
+      <button onClick={handleButton5Click}>put 5 w/ data</button>
+      <hr />
       <button onClick={handleButton4Click}>delete 요청 2</button>
       <hr />
       <button onClick={handleButton3Click}>put 요청 2</button>
