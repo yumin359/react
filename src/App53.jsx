@@ -51,8 +51,21 @@ function App53(props) {
     axios.get("/api/main28/sub7");
   }
 
+  function handleButton8Click() {
+    // get 방식으로 데이터 보낼 때 query string 사용
+    axios.get("/api/main28/sub8?name=son&age=33");
+  }
+
+  function handleButton9Click() {
+    axios.get("/api/main28/sub9?address=seoul&score=99.99");
+  }
+
   return (
     <div>
+      <button onClick={handleButton9Click}>요청 9 + query string</button>
+      <hr />
+      <button onClick={handleButton8Click}>요청 8 w/ query string</button>
+      <hr />
       {/* 연습 : axios.get 메소드 활용해서 7버튼 클릭시 get /api/main28/sub7 요청 보내기*/}
       {/* server 에서 get /api/main28/sub7 요청 받기 */}
       <button onClick={handleButton7Click}>요청 7</button>
