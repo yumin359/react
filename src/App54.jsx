@@ -79,6 +79,7 @@ function App54(props) {
     axios.post("/api/main29/sub11", ["java", "boot", "spring"]);
   }
 
+  // 연습 : post /api/main29/sub12 요청 받는 spring의 request handler method 만들기
   function handleButton12Click() {
     // 배열 안에 객체들
     axios.post("/api/main29/sub12", [
@@ -99,10 +100,43 @@ function App54(props) {
       },
     ]);
   }
-  // 연습 : post /api/main29/sub12 요청 받는 spring의 request handler method 만들기
+
+  function handleButton13Click() {
+    axios.post("/api/main29/sub13", {
+      nickName: "흥민", // string
+      // object
+      team: {
+        name: "토트넘",
+        location: "런던",
+      },
+      age: 33, // number
+      married: false, // boolean
+      address: ["서울", "런던", "베를린"], // array
+    });
+  }
+
+  // 연습: 14번 버튼 클릭시 일하는 request handler method 만들고
+  // json은 dto(MyBean292)로 파싱하기
+  function handleButton14Click() {
+    axios.post("/api/main29/sub14", {
+      person: {
+        name: "흥민",
+        age: 55,
+      },
+      city: "서울",
+      score: 88.33,
+      checked: true,
+      fruits: ["apple", "lemon", "mango"],
+    });
+  }
 
   return (
     <div>
+      <button onClick={handleButton14Click}>post 14</button>
+      <hr />
+      <button onClick={handleButton13Click}>post 13</button>
+      <hr />
+
       <button onClick={handleButton12Click}>post 12 w/ array of objects</button>
       <hr />
       <button onClick={handleButton11Click}>post 11 w/ array</button>
