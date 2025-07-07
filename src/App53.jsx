@@ -37,8 +37,30 @@ function App53(props) {
     });
   }
 
+  function handleButton6Click() {
+    // axios.request({
+    //   method: "get",
+    //   url: "/api/main28/sub6",
+    // });
+    // get 방식 요청
+    // 아래처럼 더 많이 씀
+    axios.get("/api/main28/sub6");
+  }
+
+  function handleButton7Click() {
+    axios.get("/api/main28/sub7");
+  }
+
   return (
     <div>
+      {/* 연습 : axios.get 메소드 활용해서 7버튼 클릭시 get /api/main28/sub7 요청 보내기*/}
+      {/* server 에서 get /api/main28/sub7 요청 받기 */}
+      <button onClick={handleButton7Click}>요청 7</button>
+      <hr />
+      <button onClick={handleButton6Click} type="button">
+        요청 6
+      </button>
+      <hr />
       {/* 연습 : 버튼 5 클릭하면 post /api/main28/sub4 으로 요청*/}
       {/* 서버에서 post /api/main28/sub4 의 요청 받는 method 만들기*/}
       <button onClick={handleButton5Click} type="button">
