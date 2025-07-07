@@ -107,8 +107,32 @@ function App53(props) {
     });
   }
 
+  function handleButton15Click() {
+    const p = new URLSearchParams();
+    p.set("name", "hm");
+    p.set("age", "33");
+    p.set("country", "한국");
+    console.log(p.toString());
+
+    // axios.get("/api/main28/sub15?" + p.toString());
+    axios.get("/api/main28/sub15?" + p);
+  }
+
+  function handleButton16Click() {
+    const p = new URLSearchParams();
+    p.set("fruit", "apple");
+    p.set("price", 5000);
+    p.set("location", "seoul");
+    // axios.get("/api/main28/sub16?" + p);
+    axios.get(`/api/main28/sub16?${p}`);
+  }
+
   return (
     <div>
+      <button onClick={handleButton16Click}>요청 16</button>
+      <hr />
+      <button onClick={handleButton15Click}>요청 15</button>
+      <hr />
       <button onClick={handleButton14Click}>
         요청 14 URLSearchParams 객체 활용
       </button>
