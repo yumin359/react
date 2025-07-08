@@ -28,8 +28,48 @@ function App56(props) {
     });
   }
 
+  function handleButton4Click() {
+    axios.postForm("api/main31/sub4", {
+      id: 33,
+      userName: "흥민",
+      address: "강남",
+      uploadFiles: myFiles,
+    });
+  }
+
+  function handleButton5Click() {
+    axios.postForm("api/main31/sub5", {
+      score: 66.77,
+      className: "기린",
+      location: "신촌",
+      uploads: myFiles,
+    });
+  }
+
   return (
     <div>
+      <div>
+        <input
+          type="file"
+          multiple
+          onChange={(e) => setMyFiles(e.target.files)}
+        />
+        <button onClick={handleButton5Click}>
+          파일 전송 5 여러개(dto받기)
+        </button>
+      </div>
+      <hr />
+      <div>
+        <input
+          type="file"
+          multiple
+          onChange={(e) => setMyFiles(e.target.files)}
+        />
+        <button onClick={handleButton4Click}>
+          파일 전송 4 여러개 (dto 받기)
+        </button>
+      </div>
+      <hr />
       <div>
         <input
           type="file"
