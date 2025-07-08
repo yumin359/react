@@ -88,8 +88,66 @@ function App57(props) {
     });
   }
 
+  function handleButton15Click() {
+    // axios.then()은 200번대 응답 코드에만 실행
+    // 200번대 외에는 catch 메소드 실행
+    axios
+      .get("/api/main32/sub15")
+      .then((res) => {
+        console.log("15 잘됨, 응답 받음");
+      })
+      .catch((err) => {
+        console.log("15 잘안됨");
+      });
+  }
+
+  function handleButton16Click() {
+    axios
+      .get("/api/main32/sub16")
+      .then((res) => {
+        console.log("16 잘됨, 응답 받음");
+      })
+      .catch((err) => {
+        console.log("16 잘안됨");
+      });
+  }
+
+  // 연습 : 17번 버튼 클릭시 get /api/main32/sub17로 요청
+  // 200번 응답 받기(spring boot 코드 작성)
+  // 응답 후 console에 17잘됨 출력
+  function handleButton17Click() {
+    axios
+      .get("/api/main32/sub17")
+      .then((res) => {
+        console.log("17잘됨");
+      })
+      .catch((error) => {
+        console.log("17잘안됨");
+      });
+  }
+
+  // 연습 : 18번 버튼 클릭시 get /api/main32/sub18로 요청
+  // 500번 응답 받기(spring boot 코드 작성)
+  // 응답 후 console에 18잘안됨 출력
+  function handleButton18Click() {
+    axios
+      .get("/api/main32/sub18")
+      .then((res) => {
+        console.log("18잘됨");
+      })
+      .catch((error) => {
+        console.log("18잘안됨");
+      });
+  }
+
   return (
     <div>
+      <button onClick={handleButton17Click}>17 / 200번 대 응답</button>
+      <button onClick={handleButton18Click}>18 / 500번 대 응답</button>
+      <hr />
+      <button onClick={handleButton15Click}>15 / 200번 응답</button>
+      <button onClick={handleButton16Click}>16 / 400번 응답</button>
+      <hr />
       <button
         onClick={() => {
           axios.get("/api/main32/sub12");
