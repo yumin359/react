@@ -193,6 +193,9 @@ function App57(props) {
         } else if (err.response.status === 500) {
           console.log("서버 잘못");
         }
+      })
+      .finally(() => {
+        console.log("잘되는 안되는 항상 실행되는 코드는 여기에");
       });
   }
 
